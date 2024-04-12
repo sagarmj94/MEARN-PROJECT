@@ -1,0 +1,95 @@
+/* Container for the Quote component */
+.quote-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #89f7fe, #66a6ff);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Styling and animation for the quote text */
+  .quote-display {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .quote-text {
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 80%;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .quote-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #4adede, #4a69de);
+    mix-blend-mode: screen;
+    animation: slide 8s ease-in-out infinite alternate;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Input and button styling */
+  .quote-input, .quote-button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: all 0.3s;
+  }
+  
+  .quote-input {
+    width: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .quote-button {
+    background-color: #4a69de;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .quote-button:hover {
+    background-color: #3a52ce;
+  }
+  
+  /* Loading and error message styling */
+  .loading, .error {
+    color: #cc0000;
+    font-weight: bold;
+    animation: fadeIn 2s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
